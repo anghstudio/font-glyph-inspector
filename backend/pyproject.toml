@@ -1,0 +1,15 @@
+[project]
+name = "anghstudio-font-glyph-inspector"
+version = "0.1.0"
+description = "A web-based font glyph and OpenType inspection tool."
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+  "fastapi>=0.115,<1.0",
+  "uvicorn[standard]>=0.30,<1.0",
+  "fonttools[woff]>=4.55,<5.0",
+  "python-multipart>=0.0.9",
+]
+
+[tool.ruff]
+line-length = 110
