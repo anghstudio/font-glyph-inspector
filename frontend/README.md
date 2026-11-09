@@ -1,10 +1,5 @@
-# Font Glyph Inspector Web
+# Frontend
 
-React + Vite interface. Run from this directory:
+React + Vite interface for Font Glyph Inspector.
 
-```bash
-npm install
-npm run dev
-```
-
-The development server runs at <http://localhost:5173>. The API defaults to `http://localhost:8000`; override with `VITE_API_URL` in `.env.local`.
+Run with `npm install` and `npm run dev`. The frontend continues to consume the v0.3 glyph detail fields and additionally renders the optional `contourAnalysis` payload introduced in API v0.4.

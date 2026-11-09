@@ -1,27 +1,31 @@
 # Changelog
 
-## 0.3.0 — Advanced Glyph Inspector
-- Added outline point extraction for TrueType simple glyphs, including on-curve and off-curve classification.
-- Added decomposed component point inspection for composite TrueType glyphs.
-- Added recorded outline point support for CFF/CFF2 glyphs.
-- Added interactive point/control-point and metrics-guide overlays.
-- Added a coordinate table for glyph outline points.
-- Added individual glyph SVG export.
+## 0.8.1 — Variable Font Validation & Interpolation Analysis
+- Added structural validation for fvar axis ranges, default coordinates, unique tags, named-instance coordinates, avar mappings, and STAT axis references.
+- Added real static-instance generation through FontTools varLib instancer at default, per-axis endpoints, named instances, and a bounded set of multi-axis corners.
+- Added generated-instance checks for glyph count, TrueType composite references, and horizontal metrics.
+- Added a dedicated VF Validation tab with severity-coded findings, per-location pass/fail results, test scope, and explicit limitations.
+- Added an API endpoint at `/api/fonts/{id}/variable-validation`.
+- Added automated tests for representative instance generation and static-font handling.
+- Clarifies that structural instancing success does not certify smooth visual interpolation or design intent.
 
-# Changelog
+## 0.8.0 — Variable Font Lab / Inspector
+- Added a variable-font inspection endpoint for fvar axis definitions and named instances.
+- Added avar normalized-coordinate segment mappings and STAT design-axis metadata.
+- Added variation-table inventory for fvar, avar, STAT, gvar, CFF2, HVAR, VVAR, MVAR, and cvar.
+- Added interactive axis sliders, default reset, and named-instance presets for the live specimen.
+- Added explicit static-font detection and read-only scope disclosure.
+- Updated frontend and API versions to 0.8.0.
 
-## 0.2.0 — Glyph Engineering foundation
+## 0.7.0 — Font Completeness & Quality Analyzer
+- Added a dedicated Quality tab with a practical MyFonts-inspired Latin coverage profile.
+- Checks uppercase, lowercase, numerals, basic punctuation, common symbols, and extended Latin characters through the best Unicode cmap.
+- Reports required-profile gaps as warnings and extended coverage gaps as informational findings.
+- Added horizontal metric completeness checks and informational zero-advance reporting.
+- Added JSON quality report export.
+- Clarifies that Unicode mapping checks do not assess visual glyph correctness and that the profile is not an official marketplace certification.
 
-- Added a per-glyph inspection API endpoint.
-- Added glyph outline path and bounding-box extraction through FontTools pens.
-- Added advance width, left side bearing, units per em, and optional vertical metrics.
-- Added TrueType contour, point, and composite-component counts where available.
-- Expanded the glyph detail panel while preserving the existing editorial interface.
-- Updated the project roadmap and API documentation.
-
-## 0.1.0 — Initial web migration
-
-- Added FastAPI font upload and inspection API.
-- Added React/Vite responsive interface.
-- Added glyph map, Unicode search/filter, specimen preview, metadata/statistics, OpenType feature overview, table inventory, unmapped glyph list, and TSV export.
-- Added MIT license and contribution documentation.
+- Fixed warning/error summary counters.
+- Added vertical outline-bound checks for TrueType, CFF, and CFF2 glyph sets.
+- Avoided false WOFF2 checksum-unavailable warnings where the directory does not expose SFNT checksums.
+- Expanded diagnostics scope reporting.

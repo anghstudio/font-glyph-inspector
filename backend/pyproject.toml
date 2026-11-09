@@ -1,7 +1,7 @@
 [project]
 name = "anghstudio-font-glyph-inspector"
-version = "0.1.0"
-description = "A web-based font glyph and OpenType inspection tool."
+version = "0.7.0"
+description = "A web-based font glyph, OpenType, structure and integrity inspection tool."
 requires-python = ">=3.10"
 license = { text = "MIT" }
 dependencies = [
